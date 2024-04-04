@@ -6,7 +6,7 @@ import { UseFormRegister } from "react-hook-form";
 
 const RegisterStyle = ({ Submit, erors, required, register }) => {
   return (
-    <div className="w-screen h-screen justify-center items-center bg-[#233250]">
+    <div className="w-full pt-24 h-screen justify-center items-center bg-[#233250]">
       <div className="relative w-full md:w-4/6 lg:w-3/6 xl:2-2/5 mx-auto ">
         <div className="flex flex-col pt-10 justify-center items-center gap-4">
           <h2 className="font-bold text-3xl text-white text-center pt-5">
@@ -31,8 +31,8 @@ const RegisterStyle = ({ Submit, erors, required, register }) => {
             </div>
             <input
               type="text"
-              id="username"
-              {...register("username", { required })}
+              id="name"
+              {...register("name", { required })}
               className="p-2 rounded bg-[#676f9d] focus:outline-none focus:bg-[#676f9d] text-teal-300"
               placeholder="Username"
             />

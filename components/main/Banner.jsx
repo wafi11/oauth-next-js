@@ -3,13 +3,15 @@ import React from "react";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import { useRouter } from "next/navigation";
 
 const Banner = ({ item }) => {
   const [emblaRef] = useEmblaCarousel({ loop: false }, [Autoplay()]);
+  const router = useRouter();
   return (
     <div className="flex overflow-hidden w-full scroll-smooth " ref={emblaRef}>
       <div className="flex">
-        {item.data?.map((item) => {
+        {item?.map((item) => {
           return (
             <div className="embla__slide h-[500px] relative" key={item.mal_id}>
               {/* the image */}
@@ -39,6 +41,7 @@ const Banner = ({ item }) => {
                 </p>
                 <div className="flex flex-row items-center mt-3 md:mt-4 gap-3 ">
                   <button
+                    onClick={() => router.push(`/anime/${item.mal_id}`)}
                     className="bg-white text-white bg-opacity-30 rounded-md py-1 mdLpy-2 px-2 md:px-4 
                   w-auto text-xs lg:text-lg font-semibold flex flex-row items-center hover:bg-opacity-20 transition">
                     <AiOutlineInfoCircle className="mr-1" />

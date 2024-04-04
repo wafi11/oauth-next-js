@@ -4,6 +4,8 @@ import getCurrentUser from "./libs/auth/route";
 import Navbar from "../components/navbar";
 import ToastProvider from "../components/providers/ToastProvider";
 import ClientOnly from "../components/utils/ClientOnly";
+import Footer from "../components/footer";
+import VideoApi from "../components/utils/VideoApi";
 
 const inter = Nunito({
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -20,11 +22,10 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} dark:bg-medium`}>
-        {/* <ClientOnly> */}
         <Navbar />
         <ToastProvider />
-        {/* </ClientOnly> */}
         {children}
+        <Footer />
       </body>
     </html>
   );

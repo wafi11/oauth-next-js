@@ -7,7 +7,7 @@ import { signIn } from "next-auth/react";
 
 const LoginStyle = ({ Submit, erors, required, register }) => {
   return (
-    <div className="w-screen h-screen justify-center items-center bg-[#233250]">
+    <div className="w-full pt-24 h-screen justify-center items-center bg-[#233250]">
       <div className="relative w-full md:w-4/6 lg:w-3/6 xl:2-2/5 mx-auto ">
         <div className="flex flex-col pt-10 justify-center items-center gap-4">
           <h2 className="font-bold text-3xl text-white text-center pt-5">
@@ -64,6 +64,11 @@ const LoginStyle = ({ Submit, erors, required, register }) => {
                 Github
               </div>
               <div
+                onClick={() =>
+                  signIn("google", {
+                    callbackUrl: `${window.location.origin}`,
+                  })
+                }
                 className="flex justify-center items-center text-md p-2 font-bold gap-3
                bg-[#676f9d] text-rose-700 w-full">
                 <AiFillGoogleSquare size={20} /> Google

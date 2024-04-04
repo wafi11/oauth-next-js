@@ -27,7 +27,7 @@ const UserMenu = ({ currentUser }) => {
         <div
           onClick={handleOpen}
           className="p-4 md:py-1 md:px-2 border-[1px] border-gray-200 dark:border-dark dark:bg-dark 
-          flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md ">
+          flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition">
           <AiOutlineMenu className="dark:text-teal-500" />
           <div className="hidden md:block">
             <Avatar currentUser={currentUser} />
@@ -36,15 +36,20 @@ const UserMenu = ({ currentUser }) => {
       </div>
       {nav && (
         <div
-          className="absolute rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden 
+          className="absolute rounded-xl shadow-md w-[40vw] md:w-3/4 dark:bg-teal-400 bg-white  overflow-hidden 
             right-0 top-12 test-sm">
           <div className="flex flex-col cursor-pointer">
             {currentUser ? (
               <div className="px-4 py-3  transition font-semibold">
                 <p
                   className="dark:hover:text-teal-100 hover:text-green-300"
-                  onClick={() => router.push("/login")}>
-                  My Comments
+                  onClick={() => router.push("/dashboard")}>
+                  My Profile
+                </p>
+                <p
+                  className="dark:hover:text-teal-100 hover:text-green-300"
+                  onClick={() => router.push("/collection")}>
+                  My Collection
                 </p>
                 <p
                   className="dark:hover:text-teal-100 hover:text-green-300"

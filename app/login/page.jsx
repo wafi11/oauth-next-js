@@ -22,24 +22,33 @@ const LoginModal = () => {
     },
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = (data, e) => {
+    e.preventDefault();
     setIsLoading(true);
 
     signIn("credentials", {
       ...data,
       redirect: false,
-    }).then((callback) => {
-      setIsLoading(false);
+    })
+      .then((callback) => {
+        setIsLoading(false);
 
-      if (callback?.ok) {
-        toast.success("Logged in");
-        router.push("/");
-      }
+        if (callback?.ok) {
+          toast.success("Logged in");
+          router.push("/");
+        }
 
-      if (callback?.error) {
-        toast.error(callback.error);
-      }
-    });
+        if (callback?.error) {
+          toast.error(callback.error);
+        }
+        window.location.href = "/";
+      })
+      .catch((error) => {
+        toast.error("Something went wrong");
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   return (
