@@ -14,10 +14,10 @@ const Footer = () => {
           NextNime Web for streaming movie and watching anime.
         </p>
         <div className="text-3xl flex md:w-[75%] my-6 justify-between">
-          <FaFacebook />
-          <FaInstagramSquare />
-          <FaGithubSquare />
-          <FaXTwitter />
+          <FaFacebook className="hover:text-blue-800" />
+          <FaInstagramSquare className="hover:bg-gradient-to-r from-blue-700 to-purple-500" />
+          <FaGithubSquare className="hover:bg-slate-950 hover:text-gray-200" />
+          <FaXTwitter className="hover:bg-slate-950 hover:text-gray-200" />
         </div>
       </div>
       <Paticians />

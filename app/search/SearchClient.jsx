@@ -19,14 +19,13 @@ const SearchClient = () => {
   }, [params]);
   return (
     <>
-      <div className="pt-24 px-10">
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold pt-10">
+      <div className="p-10">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold ">
           Searching For ....
           <span className="text-slate-900 dark:text-teal-500">{url}</span>
         </h1>
       </div>
       <div className="pb-40">
-        <MovieList item={anime} />
         <MovieList item={anime} />
       </div>
     </>

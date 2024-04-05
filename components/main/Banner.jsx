@@ -9,17 +9,19 @@ const Banner = ({ item }) => {
   const [emblaRef] = useEmblaCarousel({ loop: false }, [Autoplay()]);
   const router = useRouter();
   return (
-    <div className="flex overflow-hidden w-full scroll-smooth " ref={emblaRef}>
+    <div
+      className="flex overflow-hidden w-full scroll-smooth relative mt-10"
+      ref={emblaRef}>
       <div className="flex">
         {item?.map((item) => {
           return (
             <div className="embla__slide h-[500px] relative" key={item.mal_id}>
               {/* the image */}
               <img
-                className="w-full md:h-full bg-dark/15
+                className="w-full md:h-full
                 object-cover brightness-[0.5]
-                rounded-md hover:border-[4px] border-neutral-400
-                dark:border-teal-400 transition-all duration-100 ease-in-out"
+                rounded-md border-neutral-400
+                dark:border-teal-400"
                 src={item.images.jpg.image_url}
                 alt="../"
               />

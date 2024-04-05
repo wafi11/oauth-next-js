@@ -4,7 +4,7 @@ export const ApiJikan = async(resource,query) => {
     const api = process.env.API_JIKAN 
     const response = await axios.get(`${api}/${resource}?${query}`)
     const result = response.data
-    return response.data
+    return result
 }
 
 

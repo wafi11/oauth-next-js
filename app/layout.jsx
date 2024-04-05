@@ -4,6 +4,7 @@ import getCurrentUser from "./libs/auth/route";
 import Navbar from "../components/navbar";
 import ToastProvider from "../components/providers/ToastProvider";
 import Footer from "../components/footer";
+import MenuItem from "../components/navbar/MenuItem";
 
 const inter = Nunito({
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -20,7 +21,8 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} dark:bg-medium`}>
-        <Navbar />
+        {currentUser && <Navbar />}
+        <MenuItem currentUser={currentUser} />
         <ToastProvider />
         {children}
         <Footer />
