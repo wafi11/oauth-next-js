@@ -40,7 +40,7 @@ const UserMenu = ({ currentUser }) => {
             right-0 top-12 test-sm">
           <div className="flex flex-col cursor-pointer">
             {currentUser ? (
-              <div className="px-4 py-3  transition font-semibold">
+              <div className="px-4 py-3  transition font-light">
                 <p
                   className="dark:hover:text-teal-100 hover:text-green-300"
                   onClick={() => router.push("/dashboard")}>

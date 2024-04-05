@@ -28,7 +28,7 @@ const page = async ({ params: { id } }) => {
           className="grid sm:flex h-full sm:h-[400px] 
         mt-5 rounded-lg justify-center items-center bg-[#424769] gap-8 pb-5 sm:pb-0">
           <Image
-            src={Anime.images.jpg.large_image_url}
+            src={Anime.images.jpg.image_url}
             width={100}
             height={150}
             alt="../"
@@ -68,7 +68,7 @@ const page = async ({ params: { id } }) => {
           <CommentBox
             anime_mal_id={id}
             email={currentUser?.user.email}
-            anime_image={Anime.images.jpg.large_image_url}
+            anime_image={Anime.images.jpg.image_url}
             anime_title={Anime.title}
             username={currentUser?.user.name}
           />

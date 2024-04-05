@@ -1,6 +1,4 @@
-import React from 'react'
 import { authUserSession } from './auth/route'
-import { deflate } from 'zlib'
 
 export  async function DataCollection() {
     try{
@@ -21,8 +19,6 @@ export  async function DataCollection() {
         }
 
         return currentUser
-            // createdAt : currentUser.createdAt.toISOString(),
-            // updatedAt : currentUser.updatedAt.toISOString(),
         
     }catch(error){
         console.log("Erorrr",error)

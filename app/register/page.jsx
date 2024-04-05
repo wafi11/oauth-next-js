@@ -40,27 +40,6 @@ const page = () => {
         setIsLoading(false);
       });
   };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   if (!name | !password | !email) {
-  //     return console.log("error");
-  //   }
-  //   try {
-  //     const res = await axios.post("/api/register", {
-  //       email,
-  //       password,
-  //       name,
-  //     });
-
-  //     if (res?.ok) {
-  //       console.log("berhasil");
-  //     }
-  //   } catch (err) {
-  //     console.log("error", err);
-  //   }
-  // };
   return (
     <RegisterStyle
       Submit={handleSubmit(onSubmit)}

@@ -15,7 +15,7 @@ const MovieList = ({ item, title }) => {
             <Link href={`/anime/${movie.mal_id}`} key={movie.mal_id}>
               <MovieCard
                 title={movie.title}
-                image={movie.images.webp.large_image_url}
+                image={movie.images.webp.image_url}
               />
             </Link>
           ))}

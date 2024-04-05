@@ -20,7 +20,7 @@ const Banner = ({ item }) => {
                 object-cover brightness-[0.5]
                 rounded-md hover:border-[4px] border-neutral-400
                 dark:border-teal-400 transition-all duration-100 ease-in-out"
-                src={item.images.jpg.large_image_url}
+                src={item.images.jpg.image_url}
                 alt="../"
               />
               <div className="absolute top-[50%] md:top-[30%]  ml-4 md:ml-16">

@@ -1,8 +1,6 @@
-import { ApiJikan, getNestedAnimeResponse } from "./api/jikan-api";
+import { ApiJikan } from "./api/jikan-api";
 import Banner from "../components/main/Banner";
-import Navbar from "../components/navbar";
 import MovieList from "../components/main/movieList";
-import Footer from "../components/footer";
 
 export default async function Home() {
   const TopAnime = await ApiJikan("top/anime", "limit=8");

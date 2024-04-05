@@ -6,17 +6,17 @@ import { BiSearch } from "react-icons/bi";
 import { createurl } from "../utils/search";
 import { title } from "process";
 import { useSearch } from "../hooks/useSearchInput";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import axios from "axios";
+import { useAnimeSearch } from "../hooks/useAnimeSearch";
 
 const SearchInput = () => {
-  const { fetchMovie, movie } = useSearch();
-  const searchRef = useRef();
+  const [input, setInput] = useState("");
   const router = useRouter();
 
-
-  const handleClick = () => {
-    const query = searchRef.current.value;
-    router.push(`/search?query=${query}`);
+  const handleClick = async (e) => {
+    e.preventDefault();
+    router.push(`/search?q=${input}`);
   };
   return (
     <div
@@ -26,15 +26,18 @@ const SearchInput = () => {
    `}>
       <div className="flex justify-between items-center px-5 p-1 ">
         <input
-          ref={searchRef}
+          defaultValue={input}
+          // value={searchRef}
           placeholder="Search For anything "
+          onChange={(e) => setInput(e.target.value)}
           className={`focus:outline-none text-gray-700 bg-white dark:text-teal-500 dark:bg-dark w-full rounded-full
-            `}
+          `}
         />
         <div
+          // type="submit"
           onClick={handleClick}
-          className="text-xl md:text-2xl p-2  dark:bg-teal-500 
-            text-gray-700 rounded-full absolute right-2">
+          className="text-xl md:text-3xl p-2  dark:bg-teal-500
+          text-gray-700 rounded-full absolute right-2 top-0">
           <BiSearch />
         </div>
       </div>
