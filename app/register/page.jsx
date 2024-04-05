@@ -3,11 +3,10 @@ import axios from "axios";
 import React, { useState } from "react";
 import RegisterStyle from "./RegisterStyle";
 import { useForm } from "react-hook-form";
-import { Field, FieldValues } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
-const page = () => {
+const Page = () => {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const {
@@ -50,4 +49,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
